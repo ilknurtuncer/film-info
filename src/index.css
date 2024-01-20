@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: 0.5;
+  }
+  .hr-text:before {
+    content: "";
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+  .hr-text:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+    padding: 0 0.5em;
+    line-height: 1.5em;
+    color: #818078;
+    background-color: #fcfcfa;
+  }
+
+  .tag {
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-weight: bold;
+    width: 3rem;
+    text-align: center;
+  }
+  
+  .tag.green {
+    background-color: #1b5e20;
+  }
+  
+  .tag.orange {
+    background-color: #f57f17;
+  }
+  
+  .tag.red {
+    background-color: #7f0000;
+  }
